@@ -42,6 +42,10 @@ class _CardOfSourceState extends State<CardOfSource> {
                         .headline6!
                         .copyWith(color: Colors.black),
                   ),
+                  Text(
+                    widget.description,
+                    style: TextStyle(fontSize: 8),
+                  ),
                   Expanded(
                     child: Row(
                       children: [

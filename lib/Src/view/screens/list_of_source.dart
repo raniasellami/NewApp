@@ -19,7 +19,9 @@ class _ListOfSourceState extends State<ListOfSource> {
     return Scaffold(
       appBar: AppBar(),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed("/news_screen");
+        },
         child: Text("Finish"),
       ),
       body: FutureBuilder<SourceApiModel>(

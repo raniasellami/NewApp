@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/Src/view/screens/list_of_source.dart';
+import 'package:newsapp/Src/view/screens/news.screen.dart';
 import 'package:newsapp/Src/view/screens/on_boarding.dart';
 import 'package:newsapp/Src/view/screens/splash_screen.dart';
 
@@ -25,6 +26,9 @@ class MyApp extends StatelessWidget {
         },
         "/SplashScreen": (BuildContext context) {
           return const SplashScreen();
+        },
+        "/news_screen": (BuildContext context) {
+          return const newsscreen();
         },
         "/source_screen": (BuildContext context) {
           return const ListOfSource();
