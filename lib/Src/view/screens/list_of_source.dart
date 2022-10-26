@@ -17,7 +17,12 @@ class _ListOfSourceState extends State<ListOfSource> {
   Widget build(BuildContext context) {
     var service = NewService();
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('noticee'),
+        actions: [
+          Icon(Icons.add_to_drive),
+        ],
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.of(context).pushNamed("/news_screen");
