@@ -4,6 +4,7 @@ import 'package:newsapp/Src/model/everthing_api_model.dart';
 import 'package:newsapp/Src/model/everthing_api_model.dart';
 import 'package:newsapp/Src/model/everthing_api_model.dart';
 import 'package:newsapp/Src/service/EverythingService.dart';
+import 'package:newsapp/Src/view/screens/ListOfTopArticle.dart';
 import 'package:newsapp/Src/view/widgets/everything_item_view.dart';
 
 class newsscreen extends StatefulWidget {
@@ -19,46 +20,53 @@ class _newsscreenState extends State<newsscreen> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        appBar: AppBar(
-          bottom: const TabBar(
-            tabs: [
-              Tab(icon: Icon(Icons.directions_car)),
-              Tab(icon: Icon(Icons.directions_transit)),
-            ],
+          appBar: AppBar(
+            bottom: TabBar(
+              tabs: [
+                Tab(text: 'News'),
+                Tab(text: 'Popular'),
+              ],
+            ),
           ),
-        ),
-        body: FutureBuilder<EverthingApiModel>(
-          future: EverythingService().everthingnews(
-            "tesla",
-            "2022-09-25",
-            "publishedAt",
-          ),
-          builder: (buildcontext, snapshot) {
-            if (snapshot.hasData) {
-              return ListView.builder(
-                itemCount: snapshot.data!.articles?.length ?? 0,
-                itemBuilder: (context, index) {
-                  return cardofeverythings(
-                    source: snapshot.data!.articles![index].source!.name ?? "",
-                    author: snapshot.data!.articles![index].author ?? "",
-                    title: snapshot.data!.articles![index].title ?? "",
-                    url: snapshot.data!.articles![index].url ?? "",
-                    description:
-                        snapshot.data!.articles![index].description ?? "",
-                    urlToImage:
-                        snapshot.data!.articles![index].urlToImage ?? "",
-                    publishedAt:
-                        snapshot.data!.articles![index].publishedAt ?? "",
-                    content: snapshot.data!.articles![index].content ?? "",
-                  );
+          body: TabBarView(
+            children: [
+              FutureBuilder<EverthingApiModel>(
+                future: EverythingService().everthingnews(
+                  "tesla",
+                  "2022-09-25",
+                  "publishedAt",
+                ),
+                builder: (buildcontext, snapshot) {
+                  if (snapshot.hasData) {
+                    return ListView.builder(
+                      itemCount: snapshot.data!.articles?.length ?? 0,
+                      itemBuilder: (context, index) {
+                        return cardofeverythings(
+                          source:
+                              snapshot.data!.articles![index].source!.name ??
+                                  "",
+                          author: snapshot.data!.articles![index].author ?? "",
+                          title: snapshot.data!.articles![index].title ?? "",
+                          url: snapshot.data!.articles![index].url ?? "",
+                          description:
+                              snapshot.data!.articles![index].description ?? "",
+                          urlToImage:
+                              snapshot.data!.articles![index].urlToImage ?? "",
+                          publishedAt:
+                              snapshot.data!.articles![index].publishedAt ?? "",
+                          content:
+                              snapshot.data!.articles![index].content ?? "",
+                        );
+                      },
+                    );
+                  } else {
+                    return const CircularProgressIndicator();
+                  }
                 },
-              );
-            } else {
-              return const CircularProgressIndicator();
-            }
-          },
-        ),
-      ),
+              ),
+              ListOfTopArticle()
+            ],
+          )),
     );
   }
 }
