@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/Src/utils/dateTimeExtention.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class cardofeverythings extends StatelessWidget {
@@ -64,7 +65,7 @@ class cardofeverythings extends StatelessWidget {
                             .copyWith(color: Colors.blue),
                       ),
                     ),
-                    Text(publishedAt),
+                    Text(DateTime.parse(publishedAt).timeAgo()),
                   ],
                 ),
               ),
