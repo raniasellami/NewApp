@@ -64,10 +64,7 @@ class cardofeverythings extends StatelessWidget {
                             .copyWith(color: Colors.blue),
                       ),
                     ),
-                    Text(DateTime time1 = parse( publishedAt);
-                  print(convertToAgo(time1));
-
-                    ),
+                    Text(publishedAt),
                   ],
                 ),
               ),
