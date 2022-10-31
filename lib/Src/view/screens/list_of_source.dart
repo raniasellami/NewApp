@@ -51,7 +51,12 @@ class _ListOfSourceState extends State<ListOfSource> {
               },
             );
           } else {
-            return const CircularProgressIndicator();
+            return Center(
+              child: SizedBox(
+                  height: 16,
+                  width: 16,
+                  child: const CircularProgressIndicator()),
+            );
           }
         },
       ),

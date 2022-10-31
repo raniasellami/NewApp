@@ -33,7 +33,10 @@ class ListOfTopArticle extends StatelessWidget {
                   },
                 )
               : Center(
-                  child: const CircularProgressIndicator(),
+                  child: SizedBox(
+                      height: 16,
+                      width: 16,
+                      child: const CircularProgressIndicator()),
                 );
         },
       ),

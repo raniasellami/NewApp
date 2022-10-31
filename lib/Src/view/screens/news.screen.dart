@@ -60,7 +60,11 @@ class _newsscreenState extends State<newsscreen> {
                       },
                     );
                   } else {
-                    return const CircularProgressIndicator();
+                    return SizedBox(
+                      height: 16,
+                      width: 16,
+                      //  child: const CircularProgressIndicator());
+                    );
                   }
                 },
               ),
