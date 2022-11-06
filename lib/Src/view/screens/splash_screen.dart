@@ -15,10 +15,15 @@ class SplashScreen extends StatelessWidget {
         );
       },
     );
-    return SizedBox(
-      width: 48,
-      height: 48,
-      child: Image.asset("assets/ic_app_news.jpeg"),
+    return Container(
+      color: Colors.white,
+      child: SizedBox(
+        width: 48,
+        height: 48,
+        child: Image.asset(
+          "assets/icon.png",
+        ),
+      ),
     );
   }
 }
