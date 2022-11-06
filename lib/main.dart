@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:newsapp/Src/view/screens/list_of_source.dart';
 import 'package:newsapp/Src/view/screens/news.screen.dart';
 import 'package:newsapp/Src/view/screens/on_boarding.dart';
+import 'package:newsapp/Src/view/screens/settingsScreen.dart';
 import 'package:newsapp/Src/view/screens/splash_screen.dart';
 
 void main() {
@@ -35,6 +36,9 @@ class MyApp extends StatelessWidget {
         },
         "/OnBoarding": (BuildContext context) {
           return const OnBoarding();
+        },
+        "/Setting": (BuildContext context) {
+          return const Setting();
         }
       },
     );

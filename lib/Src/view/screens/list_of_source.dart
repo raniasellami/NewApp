@@ -20,7 +20,15 @@ class _ListOfSourceState extends State<ListOfSource> {
       appBar: AppBar(
         title: Text('noticee'),
         actions: [
-          Icon(Icons.add_to_drive),
+          Padding(
+            padding: const EdgeInsets.only(right: 8),
+            child: IconButton(
+              icon: Icon(Icons.settings),
+              onPressed: () {
+                Navigator.of(context).pushNamed("/Setting");
+              },
+            ),
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -51,12 +59,10 @@ class _ListOfSourceState extends State<ListOfSource> {
               },
             );
           } else {
-            return Center(
-              child: SizedBox(
-                  height: 16,
-                  width: 16,
-                  child: const CircularProgressIndicator()),
-            );
+            return SizedBox(
+                height: 16,
+                width: 16,
+                child: const CircularProgressIndicator());
           }
         },
       ),
