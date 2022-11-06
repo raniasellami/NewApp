@@ -3,32 +3,13 @@ import 'package:newsapp/src/model/source_api_model.dart';
 import 'package:newsapp/src/service/source_service.dart';
 import 'package:newsapp/src/view/widgets/source_item_view.dart';
 
-class SourcesScreen extends StatefulWidget {
+class SourcesScreen extends StatelessWidget {
   const SourcesScreen({Key? key}) : super(key: key);
 
-  @override
-  State<SourcesScreen> createState() => _ListOfSourceState();
-}
-
-class _ListOfSourceState extends State<SourcesScreen> {
   @override
   Widget build(BuildContext context) {
     var service = NewService();
     return Scaffold(
-      appBar: AppBar(
-        title: Text('noticee'),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 8),
-            child: IconButton(
-              icon: Icon(Icons.settings),
-              onPressed: () {
-                Navigator.of(context).pushNamed("/Setting");
-              },
-            ),
-          ),
-        ],
-      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.of(context).pushNamed("/news_screen");
@@ -39,11 +20,8 @@ class _ListOfSourceState extends State<SourcesScreen> {
         future: service.fetchSources(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return GridView.builder(
+            return ListView.builder(
               itemCount: snapshot.data!.sources?.length ?? 0,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-              ),
               itemBuilder: (context, index) {
                 return CardOfSource(
                   id: snapshot.data!.sources![index].id!,

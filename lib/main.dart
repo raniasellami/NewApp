@@ -19,9 +19,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'NewsApp',
       theme: ThemeData(
+        useMaterial3: true,
         primarySwatch: Colors.blue,
       ),
-      initialRoute: "/SplashScreen",
+      initialRoute: "/source_screen",
       routes: {
         "/": (BuildContext context) {
           return const SplashScreen();

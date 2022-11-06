@@ -24,47 +24,47 @@ class CardOfSource extends StatefulWidget {
 }
 
 class _CardOfSourceState extends State<CardOfSource> {
+  bool isSourceSelected = false;
+
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Card(
-          elevation: 8,
-          child: Center(
-            child: Padding(
-              padding: const EdgeInsets.all(24.0),
-              child: Column(
-                children: [
-                  Text(
-                    widget.name,
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline6!
-                        .copyWith(color: Colors.black),
-                  ),
-                  Text(
-                    widget.description,
-                    style: TextStyle(fontSize: 8),
-                  ),
-                  Expanded(
-                    child: Row(
-                      children: [
-                        Chip(label: Text(widget.language)),
-                        Chip(label: Text(widget.category)),
-                      ],
-                    ),
-                  ),
-                  Spacer(),
-                  Text(
-                    widget.url,
-                    style: TextStyle(fontSize: 12),
-                  ),
-                ],
-              ),
-            ),
-          ),
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+        side: BorderSide(
+          color: isSourceSelected ? Colors.green : Colors.red,
         ),
-      ],
+      ),
+      elevation: 8,
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              widget.name,
+              style: Theme.of(context)
+                  .textTheme
+                  .headline6!
+                  .copyWith(color: Colors.black),
+            ),
+            Row(
+              children: [
+                Chip(label: Text(widget.language)),
+                Chip(label: Text(widget.category)),
+                Switch(
+                  value: isSourceSelected,
+                  onChanged: ((value) => isSourceSelected = !isSourceSelected),
+                )
+              ],
+            ),
+            Text(
+              widget.url,
+              style: TextStyle(fontSize: 12),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

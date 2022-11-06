@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:newsapp/src/model/everthing_api_model.dart';
 import 'package:newsapp/src/service/news_service.dart';
 import 'package:newsapp/src/view/screens/top_articles_screen.dart';
-import 'package:newsapp/src/view/widgets/everything_item_view.dart';
+import 'package:newsapp/src/view/widgets/home_app_bar.dart';
+
+import '../widgets/new_item_view.dart';
 
 class NewsScreen extends StatefulWidget {
   const NewsScreen({Key? key}) : super(key: key);
@@ -17,14 +19,7 @@ class _NewsScreenState extends State<NewsScreen> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-          appBar: AppBar(
-            bottom: TabBar(
-              tabs: [
-                Tab(text: 'News'),
-                Tab(text: 'Popular'),
-              ],
-            ),
-          ),
+          appBar: HomeAppBar().build(context),
           body: TabBarView(
             children: [
               FutureBuilder<EverthingApiModel>(
@@ -38,7 +33,7 @@ class _NewsScreenState extends State<NewsScreen> {
                     return ListView.builder(
                       itemCount: snapshot.data!.articles?.length ?? 0,
                       itemBuilder: (context, index) {
-                        return cardofeverythings(
+                        return NewItemView(
                           source:
                               snapshot.data!.articles![index].source!.name ??
                                   "",
