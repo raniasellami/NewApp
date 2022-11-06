@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp/Src/view/screens/list_of_source.dart';
-import 'package:newsapp/Src/view/screens/news.screen.dart';
-import 'package:newsapp/Src/view/screens/on_boarding.dart';
-import 'package:newsapp/Src/view/screens/settingsScreen.dart';
-import 'package:newsapp/Src/view/screens/splash_screen.dart';
+import 'package:newsapp/src/view/screens/news_screen.dart';
+import 'package:newsapp/src/view/screens/on_boarding_screen.dart';
+import 'package:newsapp/src/view/screens/settings_screen.dart';
+import 'package:newsapp/src/view/screens/source_screen.dart';
+import 'package:newsapp/src/view/screens/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,16 +29,16 @@ class MyApp extends StatelessWidget {
           return const SplashScreen();
         },
         "/news_screen": (BuildContext context) {
-          return const newsscreen();
+          return const NewsScreen();
         },
         "/source_screen": (BuildContext context) {
-          return const ListOfSource();
+          return const SourcesScreen();
         },
         "/OnBoarding": (BuildContext context) {
-          return const OnBoarding();
+          return const OnBoardingScreen();
         },
         "/Setting": (BuildContext context) {
-          return const Setting();
+          return const SettingScreen();
         }
       },
     );

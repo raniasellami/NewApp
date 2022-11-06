@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp/Src/view/screens/language_component.dart';
+import 'package:newsapp/src/view/widgets/language_component.dart';
 
-class Setting extends StatefulWidget {
-  const Setting({Key? key}) : super(key: key);
+class SettingScreen extends StatefulWidget {
+  const SettingScreen({Key? key}) : super(key: key);
 
   @override
-  State<Setting> createState() => _SettingState();
+  State<SettingScreen> createState() => _SettingState();
 }
 
-class _SettingState extends State<Setting> {
+class _SettingState extends State<SettingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +26,10 @@ class _SettingState extends State<Setting> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
-                children: [Icon(Icons.person), Text('preferances du compte')],
+                children: [
+                  Icon(Icons.person),
+                  Text('preferances du compte'),
+                ],
               ),
             ),
             Divider(

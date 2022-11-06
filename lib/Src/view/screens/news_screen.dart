@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp/Src/model/everthing_api_model.dart';
-import 'package:newsapp/Src/model/everthing_api_model.dart';
-import 'package:newsapp/Src/model/everthing_api_model.dart';
-import 'package:newsapp/Src/model/everthing_api_model.dart';
-import 'package:newsapp/Src/service/EverythingService.dart';
-import 'package:newsapp/Src/view/screens/ListOfTopArticle.dart';
-import 'package:newsapp/Src/view/widgets/everything_item_view.dart';
+import 'package:newsapp/src/model/everthing_api_model.dart';
+import 'package:newsapp/src/service/news_service.dart';
+import 'package:newsapp/src/view/screens/top_articles_screen.dart';
+import 'package:newsapp/src/view/widgets/everything_item_view.dart';
 
-class newsscreen extends StatefulWidget {
-  const newsscreen({Key? key}) : super(key: key);
+class NewsScreen extends StatefulWidget {
+  const NewsScreen({Key? key}) : super(key: key);
 
   @override
-  State<newsscreen> createState() => _newsscreenState();
+  State<NewsScreen> createState() => _NewsScreenState();
 }
 
-class _newsscreenState extends State<newsscreen> {
+class _NewsScreenState extends State<NewsScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -68,7 +65,7 @@ class _newsscreenState extends State<newsscreen> {
                   }
                 },
               ),
-              ListOfTopArticle()
+              TopArticlesScreen()
             ],
           )),
     );

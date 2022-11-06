@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp/Src/utils/dateTimeExtention.dart';
+import 'package:newsapp/src/utils/date_time_extention.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class cardofeverythings extends StatelessWidget {

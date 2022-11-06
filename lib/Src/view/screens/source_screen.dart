@@ -1,18 +1,16 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:newsapp/Src/model/source_api.model.dart';
-import 'package:newsapp/Src/service/NewService.dart';
-import 'package:newsapp/Src/view/widgets/source_item_view.dart';
+import 'package:newsapp/src/model/source_api_model.dart';
+import 'package:newsapp/src/service/source_service.dart';
+import 'package:newsapp/src/view/widgets/source_item_view.dart';
 
-class ListOfSource extends StatefulWidget {
-  const ListOfSource({Key? key}) : super(key: key);
+class SourcesScreen extends StatefulWidget {
+  const SourcesScreen({Key? key}) : super(key: key);
 
   @override
-  State<ListOfSource> createState() => _ListOfSourceState();
+  State<SourcesScreen> createState() => _ListOfSourceState();
 }
 
-class _ListOfSourceState extends State<ListOfSource> {
+class _ListOfSourceState extends State<SourcesScreen> {
   @override
   Widget build(BuildContext context) {
     var service = NewService();

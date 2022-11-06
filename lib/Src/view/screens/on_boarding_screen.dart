@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'language_component.dart';
+import 'package:newsapp/src/view/widgets/language_component.dart';
 
-class OnBoarding extends StatelessWidget {
-  const OnBoarding({Key? key}) : super(key: key);
+class OnBoardingScreen extends StatelessWidget {
+  const OnBoardingScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,9 +11,9 @@ class OnBoarding extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            LanguageComponent(language: "Arabic"),
-            LanguageComponent(language: "French"),
-            LanguageComponent(language: "English"),
+            const LanguageComponent(language: "Arabic"),
+            const LanguageComponent(language: "French"),
+            const LanguageComponent(language: "English"),
             Padding(
               padding: const EdgeInsets.only(bottom: 16.0),
               child: SizedBox(
