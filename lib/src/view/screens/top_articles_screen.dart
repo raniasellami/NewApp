@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:newsapp/src/model/top_article_api_model.dart';
 import 'package:newsapp/src/service/article_service.dart';
 import 'package:newsapp/src/view/widgets/new_item_view.dart';
-import 'package:newsapp/src/view/widgets/top_article_item_view.dart';
 
 class TopArticlesScreen extends StatelessWidget {
   const TopArticlesScreen({Key? key}) : super(key: key);

@@ -3,16 +3,16 @@ import 'package:newsapp/src/utils/date_time_extention.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NewItemView extends StatelessWidget {
-  String source;
-  String author;
-  String title;
-  String description;
-  String url;
-  String urlToImage;
-  String publishedAt;
-  String content;
+  final String source;
+  final String author;
+  final String title;
+  final String description;
+  final String url;
+  final String urlToImage;
+  final String publishedAt;
+  final String content;
 
-  NewItemView({
+  const NewItemView({
     required this.source,
     required this.author,
     required this.title,

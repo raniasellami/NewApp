@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CardOfSource extends StatefulWidget {
-  String id;
-  String name;
-  String description;
-  String url;
-  String category;
-  String language;
-  String country;
+  final String id;
+  final String name;
+  final String description;
+  final String url;
+  final String category;
+  final String language;
+  final String country;
 
-  CardOfSource({
+  const CardOfSource({
     required this.id,
     required this.name,
     required this.description,

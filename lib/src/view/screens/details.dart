@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class details extends StatefulWidget {
-  const details({Key? key}) : super(key: key);
+class DetailsScreen extends StatefulWidget {
+  const DetailsScreen({Key? key}) : super(key: key);
 
   @override
-  State<details> createState() => _detailsState();
+  State<DetailsScreen> createState() => _DetailsState();
 }
 
-class _detailsState extends State<details> {
+class _DetailsState extends State<DetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Container();
