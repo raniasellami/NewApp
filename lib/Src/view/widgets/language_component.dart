@@ -14,23 +14,28 @@ class _LanguageComponentState extends State<LanguageComponent> {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        setState(() {
-          isSelected = !isSelected;
-        });
-      },
-      child: Card(
-        color: isSelected ? Colors.green : Colors.red,
-        child: Column(
-          children: [
-            Text(
-              widget.language,
-              style: TextStyle(
-                color: isSelected ? Colors.green : Colors.red,
-              ),
+    return Container(
+      child: InkWell(
+        onTap: () {
+          setState(() {
+            isSelected = !isSelected;
+          });
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Card(
+            color: isSelected ? Colors.green : Colors.red,
+            child: Column(
+              children: [
+                Text(
+                  widget.language,
+                  style: TextStyle(
+                    color: isSelected ? Colors.green : Colors.red,
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

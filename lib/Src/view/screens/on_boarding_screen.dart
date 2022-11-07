@@ -6,25 +6,28 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Material(
-          child: GridView(
-            gridDelegate:
-                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-            children: [
-              const LanguageComponent(language: "Arabic"),
-              const LanguageComponent(language: "French"),
-              const LanguageComponent(language: "English"),
-            ],
+    return Scaffold(
+      body: Column(
+        children: [
+          Text('choose'),
+          Material(
+            child: GridView(
+              gridDelegate:
+                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+              children: [
+                const LanguageComponent(language: "Arabic"),
+                const LanguageComponent(language: "French"),
+                const LanguageComponent(language: "English"),
+              ],
+            ),
           ),
-        ),
-        floatingActionButton: ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).pushNamed("/source_screen");
-          },
-          child: const Text("Next"),
-        ),
+        ],
+      ),
+      floatingActionButton: ElevatedButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed("/source_screen");
+        },
+        child: const Text("Next"),
       ),
     );
   }

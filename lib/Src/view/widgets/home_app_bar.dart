@@ -39,10 +39,10 @@ class HomeAppBar {
       backgroundColor: Colors.lightGreen[500],
       bottom: TabBar(
         tabs: [
-          Tab(
-            text: 'News',
-            icon: Icon(Icons.newspaper),
-          ),
+          //   Tab(
+          //  text: 'News',
+          //  icon: Icon(Icons.newspaper),
+          //  ),
           Tab(
             text: 'Popular',
             icon: Icon(Icons.hot_tub),

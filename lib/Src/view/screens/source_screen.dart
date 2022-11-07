@@ -21,6 +21,8 @@ class SourcesScreen extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
               itemCount: snapshot.data!.sources?.length ?? 0,
               itemBuilder: (context, index) {
                 return CardOfSource(
