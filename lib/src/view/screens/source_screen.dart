@@ -22,7 +22,6 @@ class SourcesScreen extends StatelessWidget {
           if (snapshot.hasData) {
             return ListView.builder(
               scrollDirection: Axis.vertical,
-              shrinkWrap: true,
               itemCount: snapshot.data!.sources?.length ?? 0,
               itemBuilder: (context, index) {
                 return CardOfSource(
@@ -37,10 +36,12 @@ class SourcesScreen extends StatelessWidget {
               },
             );
           } else {
-            return SizedBox(
-                height: 16,
-                width: 16,
-                child: const CircularProgressIndicator());
+            return Center(
+              child: SizedBox(
+                  height: 16,
+                  width: 16,
+                  child: const CircularProgressIndicator()),
+            );
           }
         },
       ),
